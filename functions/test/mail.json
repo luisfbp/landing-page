@@ -1,0 +1,9 @@
+{
+    "mail": {
+      "port": "587",
+      "email": "info@genco.com.co",
+      "password": "123123",
+      "host": "smtp.testing.com.co"
+    }
+  }
+  

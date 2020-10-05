@@ -10,16 +10,14 @@
         
         function changeLocation (){
             const urlParams = new URLSearchParams(window.location.search);
-            const myParam = urlParams.get('tipoUsuario');
+            const myParam = urlParams.get('userType');
 
             switch(myParam){
-                case 'Professionals':
-                    window.location.href = '/indexProfessionals';
-
+                case 'professional':
+                    window.location.href = '/professional.html';
                     break;
-                case 'Users':
-                   window.location.href = './indexUsers.html';
-
+                case 'user':
+                   window.location.href = './user.html';
                     break;
             }
         }
