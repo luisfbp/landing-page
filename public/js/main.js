@@ -4,7 +4,6 @@
  	once: false
  });
 
- console.log(window.location.href);
 
 jQuery(document).ready(function($) {
 

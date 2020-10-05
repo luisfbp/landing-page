@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Genco</title>
 </head>
 <body>
     <script>
-        console.log(window.location.href);
-
         
         function changeLocation (){
             const urlParams = new URLSearchParams(window.location.search);
             const myParam = urlParams.get('tipoUsuario');
 
             switch(myParam){
-                case 'profecional':
-                    window.location.href = '/indexProfecionales';
+                case 'Professionals':
+                    window.location.href = '/indexProfessionals';
 
                     break;
-                case 'usuario':
-                   window.location.href = './indexUsuarios.html';
+                case 'Users':
+                   window.location.href = './indexUsers.html';
 
                     break;
             }
