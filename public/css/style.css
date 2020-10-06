@@ -672,9 +672,11 @@ h1, h2, h3, h4, h5,
       margin-top: 0px; }
 
 .form-box {
+  visibility: initial;
   padding: 40px;
   background: #fff;
-  border-radius: 7px; }
+  border-radius: 7px; 
+}
 
 .site-section {
   padding: 4em 0;
