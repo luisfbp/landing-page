@@ -16,7 +16,7 @@ function sendEmail(){
         userType : document.getElementById("userType") ? document.getElementById("userType").value : null,
         mail : document.getElementById("mail") ? document.getElementById("mail").value : null,
         name : document.getElementById("name") ? document.getElementById("name").value : null,
-        profession : document.getElementById("professional") ? document.getElementById("professional").value : null,
+        profession : document.getElementById("profession") ? document.getElementById("profession").value : null,
         message : document.getElementById("message") ? document.getElementById("message").value : null
     }
 
