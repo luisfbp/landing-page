@@ -3,18 +3,24 @@ const tipoUsuario = "";
 
 document.getElementById('btnsignUp').onclick = function (){
     sendEmail()
-    // changeBox()
 }
 
 function sendEmail(){
-    console.log('hola amigos');
+    
+    let formData = { 
+        userType : document.getElementById("userType").value,
+        mail : document.getElementById("mail").value,
+        name : document.getElementById("name").value,
+        profession : document.getElementById("professional").value,
+        message : document.getElementById("message").value
+    }
 
     var raw = JSON.stringify({
-        "userType":"professional",
-        "mail":"probando@hotmail.com",
-        "name":"pepito",
-        "profession":"carpintero",
-        "message":"this is a message"
+        "userType": formData.userType,
+        "mail": formData.mail,
+        "name": formData.name,
+        "profession": formData.professional,
+        "message": formData.message
     });
 
     var myHeaders = new Headers();
@@ -37,31 +43,3 @@ function changeBox(){
     document.getElementById('form-box').style.visibility = "hidden";
 
 }
-
-
-// var myHeaders = new Headers();
-// myHeaders.append("Content-Type", "application/json");
-
-
-// fetch("https://us-central1-genco-d92d2.cloudfunctions.net/helloWorld?contactUs=true", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
-
-
-
-// POST 'https://us-central1-genco-d92d2.cloudfunctions.net/helloWorld' \
-// --header 'Content-Type: application/json' \
-// --data-raw '{
-//     "userType" : "professional",
-//     "mail" : "probando@hotmail.com",
-//     "name" : "pepito",
-//     "profession": "carpintero"
-// }'
-
-
-
-
-
-
-
