@@ -2,8 +2,12 @@ const url = 'https://us-central1-genco-d92d2.cloudfunctions.net/helloWorld?conta
 const tipoUsuario = "";
 
 document.getElementById('btnsignUp').onclick = function (){
-    sendEmail()
-    // changeBox()
+    // sendEmail()
+    changeBox()
+}
+
+document.getElementById('btnOk').onclick = function () {
+    thanksBoxChange()
 }
 
 function sendEmail(){
@@ -33,11 +37,16 @@ function sendEmail(){
         .catch(error => console.log('error', error));
 }
 
+// thanksBox
 function changeBox(){
     document.getElementById('form-box').style.visibility = "hidden";
-
+    document.getElementById('thanksBox').style.visibility = "initial";
 }
 
+function thanksBoxChange(){
+    document.getElementById('form-box').style.visibility = "initial";
+    document.getElementById('thanksBox').style.visibility = "hidden";
+}
 
 // var myHeaders = new Headers();
 // myHeaders.append("Content-Type", "application/json");
