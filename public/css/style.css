@@ -671,10 +671,25 @@ h1, h2, h3, h4, h5,
       margin-top: 0px; }
 
 .form-box {
+  position: relative;
   visibility: initial;
   padding: 40px;
   background: #fff;
   border-radius: 7px; 
+}
+
+.thanksBox {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  visibility: hidden;
+  height: 330px;
+  background: #fff;
+  border-radius: 7px;
 }
 
 .site-section {
