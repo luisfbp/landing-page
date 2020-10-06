@@ -2,37 +2,30 @@ const url = 'https://us-central1-genco-d92d2.cloudfunctions.net/helloWorld?conta
 const tipoUsuario = "";
 
 document.getElementById('btnsignUp').onclick = function (){
-    sendEmail()
+    sendEmail();
+    changeBox();
 }
 
 document.getElementById('btnOk').onclick = function () {
-    thanksBoxChange()
+    thanksBoxChange();
 }
 
 function sendEmail(){
     
     let formData = { 
-        userType : document.getElementById("userType").value,
-        mail : document.getElementById("mail").value,
-        name : document.getElementById("name").value,
-        profession : document.getElementById("professional").value,
-        message : document.getElementById("message").value
+        userType : document.getElementById("userType") ? document.getElementById("userType").value : null,
+        mail : document.getElementById("mail") ? document.getElementById("mail").value : null,
+        name : document.getElementById("name") ? document.getElementById("name").value : null,
+        profession : document.getElementById("professional") ? document.getElementById("professional").value : null,
+        message : document.getElementById("message") ? document.getElementById("message").value : null
     }
-
-    var raw = JSON.stringify({
-        "userType": formData.userType,
-        "mail": formData.mail,
-        "name": formData.name,
-        "profession": formData.professional,
-        "message": formData.message
-    });
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     
     var requestOptions = {
       method: 'POST',
-      body: raw,
+      body: JSON.stringify(formData),
       headers: myHeaders,
       redirect: 'follow'
     };
@@ -53,30 +46,3 @@ function thanksBoxChange(){
     document.getElementById('form-box').style.visibility = "initial";
     document.getElementById('thanksBox').style.visibility = "hidden";
 }
-
-// var myHeaders = new Headers();
-// myHeaders.append("Content-Type", "application/json");
-
-
-// fetch("https://us-central1-genco-d92d2.cloudfunctions.net/helloWorld?contactUs=true", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
-
-
-
-// POST 'https://us-central1-genco-d92d2.cloudfunctions.net/helloWorld' \
-// --header 'Content-Type: application/json' \
-// --data-raw '{
-//     "userType" : "professional",
-//     "mail" : "probando@hotmail.com",
-//     "name" : "pepito",
-//     "profession": "carpintero"
-// }'
-
-
-
-
-
-
-
