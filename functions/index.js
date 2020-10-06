@@ -1,27 +1,39 @@
 const functions = require('firebase-functions');
 const nodemailer = require('nodemailer');
+const cors = require('cors')({origin: true});
 
 const LOGGER = functions.logger;
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
-exports.helloWorld = functions.https.onRequest((request, response) => {
-  LOGGER.info("Starting mailForwarding function!", {structuredData: true});
+exports.helloWorld = functions.https.onRequest((req, res) => {
 
-  var configs = functions.config();
+    LOGGER.info(res.getHeaders())
+    LOGGER.info("Starting mailForwarding function!", {structuredData: true});
 
-  let body = request.body;
+    if (req.method !== 'POST') {
+      return res.status(404).send('HTTP method is not allowed');
+    }
 
-  LOGGER.info("body: " + body);
+    var configs = functions.config();
 
-  if (!validateBody(body, configs, response)) {
-    LOGGER.error("Invalid body");
-    response.status(404).send("Bad request, unspected body");
-  } else {
-    sendMail(configs, body, response);
-    response.send(`Mail sent! to:  ${configs.mail.email}`);  
-  }
+    if (!configs.mail) {
+      LOGGER.error("Could not get mail configs");
+      return res.status(500).json("Internal Error");
+    }
+
+    let body = req.body;
+
+    LOGGER.info("body: " + JSON.stringify(body));
+
+    if (!validateBody(body)) {
+      LOGGER.error("Invalid body");
+      return res.status(404).send("Bad request, unspected body");
+    }
+    
+    sendMail(configs, body, res);
+    return res.status(200).send(`Mail sent! to:  ${configs.mail.email}`);
 
 });
 
@@ -58,13 +70,7 @@ function sendMail(configs, body, response) {
   LOGGER.info(`sending mail to: ${configs.mail.email}`);
 }
 
-function validateBody(body, configs, response) {
-
-  if (!configs.mail) {
-    LOGGER.error("Could not get mail configs");
-    response.status(500).send("Internal Error");
-    return false;
-  }
+function validateBody(body) {
 
   const {mail, profession, userType, name} = body;
 

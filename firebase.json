@@ -5,7 +5,11 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "rewrites": [ {
+      "source": "/landing-function",
+      "function": "helloWorld"
+    } ]
   },
   "functions": {
     "predeploy": [
