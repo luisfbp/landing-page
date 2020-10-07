@@ -670,8 +670,6 @@ h1, h2, h3, h4, h5,
     padding-bottom: 10px !important; }
 
 /* Blocks */
-.intro-section {
-  position: relative; }
   .intro-section, .intro-section .container > .row {
     height: 95vh;
     min-height: 600px; }
@@ -948,7 +946,7 @@ h1, h2, h3, h4, h5,
       background-color: #A21738; }
 
 .footer-section {
-  padding: 9em 2rem;
+  padding: 1em 15rem;
   background-color: #fafafa; }
   .footer-section p {
     font-size: 1rem; }
