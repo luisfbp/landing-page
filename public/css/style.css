@@ -246,51 +246,11 @@ h1, h2, h3, h4, h5,
     justify-content: center;
     width: 100%;
   }
-}
-
-@media (min-width: 750px) {
-  .imgWebProf img {
-    height: 95%;
-  } 
-  .imgWebProf{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  .fatherBoxes{
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  .footer-section {
+    padding: 1em 1rem !important;
   }
 }
 
-@media (max-width: 991.98px) {
-  /* .imgWebProf img {
-    height: 60vh;
-  }  */
-  .imgWebProf{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  .fatherBoxes{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-}
-
-/* @media (max-width: 550px) {
-  .imgWebProf img {
-    height: 65vh;
-  } 
-}
-
-@media (max-width: 390px) {
-  .imgWebProf img {
-    height: 51vh;
-  } 
-} */
 .containerForm{
   display: none;
 }
