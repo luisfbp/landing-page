@@ -648,7 +648,13 @@ h1, h2, h3, h4, h5,
   .sticky-wrapper.is-sticky .site-navbar {
     -webkit-box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.2);
     box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.2);
-    background: #fff; }
+     }
+    .sticky-wrapper.is-sticky .site-navbar.professional-navbar{
+      background: #4c0b2f;
+    }
+    .sticky-wrapper.is-sticky .site-navbar.user-navbar{
+      background: #a21738;
+    }
     .sticky-wrapper.is-sticky .site-navbar .site-logo a {
       color: #000; }
     .sticky-wrapper.is-sticky .site-navbar .site-menu > li {
