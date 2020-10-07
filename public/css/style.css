@@ -234,7 +234,23 @@ h1, h2, h3, h4, h5,
 }
 @media (max-width: 1200px) {
   .imgWebProf img {
-    height: 60vh;
+    height: 50vh;
+  } 
+  .imgWebProf{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .fatherBoxes{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (min-width: 750px) {
+  .imgWebProf img {
+    height: 95%;
   } 
   .imgWebProf{
     display: flex;
@@ -249,9 +265,9 @@ h1, h2, h3, h4, h5,
 }
 
 @media (max-width: 991.98px) {
-  .imgWebProf img {
+  /* .imgWebProf img {
     height: 60vh;
-  } 
+  }  */
   .imgWebProf{
     display: flex;
     justify-content: center;
@@ -264,7 +280,7 @@ h1, h2, h3, h4, h5,
   }
 }
 
-@media (max-width: 550px) {
+/* @media (max-width: 550px) {
   .imgWebProf img {
     height: 65vh;
   } 
@@ -274,7 +290,7 @@ h1, h2, h3, h4, h5,
   .imgWebProf img {
     height: 51vh;
   } 
-}
+} */
 .containerForm{
   display: none;
 }
