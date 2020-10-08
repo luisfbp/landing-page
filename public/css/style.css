@@ -648,7 +648,7 @@ h1, h2, h3, h4, h5,
 /* Blocks */
   .intro-section, .intro-section .container > .row {
     height: 95vh;
-    min-height: 600px; }
+    min-height: 880px; }
   .intro-section.single-cover, .intro-section.single-cover .container > .row {
     height: 50vh;
     min-height: 400px; }
